@@ -31,9 +31,9 @@ module.exports = function (app) {
     // find match
     for (let i = 1; i < friendData.length; i++) {
       let tempOne = friendData[i];
+      let yang = Math.abs(userSum - getSum(tempOne.scores));
       // if differences are the same, dont do useless calculations
       let yin = yang ? yang : Math.abs(userSum - getSum(theOne.scores));
-      let yang = Math.abs(userSum - getSum(tempOne.scores));
       if (yin > yang) {
         theOne = tempOne;
         yin = yang;
